@@ -19,7 +19,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label fx:id="selectHost" text="Select Host:" />
+                  <Label text="Select Host:" />
                   <TextField fx:id="hostText" onKeyPressed="#buttonPressed" text="localhost" />
                   <Label fx:id="hostError" text="*required" textFill="RED" visible="false" />
                </children>

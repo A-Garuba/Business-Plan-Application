@@ -95,7 +95,7 @@ public class Driver extends Application implements ViewTransitionalModel
 
 	public void showLogin() throws IOException
 	{
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("../../login.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginScene.fxml"));
 
 		Parent root = (Parent) loader.load();
 		Scene scene = new Scene(root);
@@ -109,7 +109,7 @@ public class Driver extends Application implements ViewTransitionalModel
 
 	public void showMainView() throws Exception
 	{
-		FXMLLoader loader2 = new FXMLLoader(getClass().getResource("ClientViewScene.fxml"));
+		FXMLLoader loader2 = new FXMLLoader(getClass().getResource("MainScene.fxml"));
 
 		Parent root2 = (Parent) loader2.load();
 		Scene scene2 = new Scene(root2);
