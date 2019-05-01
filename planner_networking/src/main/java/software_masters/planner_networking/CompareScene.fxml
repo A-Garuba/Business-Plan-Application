@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="mainBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="944.0" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="software_masters.planner_networking.CompareController">
+   <right>
+      <VBox prefHeight="533.0" prefWidth="83.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <Region prefHeight="33.0" prefWidth="71.0" />
+            <Button fx:id="compareButton" mnemonicParsing="false" text="Compare" />
+            <Button fx:id="returnButton" layoutX="10.0" layoutY="62.0" mnemonicParsing="false" text="Return" />
+            <Region prefHeight="25.0" prefWidth="24.0" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Region>
+            <Button fx:id="logoutButton" mnemonicParsing="false" onMouseClicked="#logout" text="Logout" />
+            <Region prefHeight="138.0" prefWidth="180.0" />
+         </children>
+         <BorderPane.margin>
+            <Insets left="5.0" right="5.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </VBox>
+   </right>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <left>
+            <TreeView fx:id="tree_left" prefHeight="504.0" prefWidth="150.0" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <TreeView fx:id="tree_right" prefHeight="504.0" prefWidth="150.0" BorderPane.alignment="CENTER" />
+         </right>
+         <center>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TreeView fx:id="tree_content_left" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                  <Separator orientation="VERTICAL" prefHeight="200.0">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Separator>
+                  <TreeView fx:id="tree_content_right" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </center>
+         <top>
+            <HBox prefHeight="28.0" prefWidth="886.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ChoiceBox fx:id="yearDropdown" prefWidth="150.0">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </ChoiceBox>
+                  <Region prefHeight="25.0" prefWidth="24.0" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Region>
+                  <ChoiceBox fx:id="yearDropdown1" prefWidth="150.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ChoiceBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </HBox>
+         </top>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" top="5.0" />
+         </BorderPane.margin>
+      </BorderPane>
+   </center>
+</BorderPane>
