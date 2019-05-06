@@ -56,7 +56,7 @@
          <top>
             <HBox prefHeight="28.0" prefWidth="886.0" BorderPane.alignment="CENTER">
                <children>
-                  <ChoiceBox fx:id="yearDropdown" prefWidth="150.0">
+                  <ChoiceBox fx:id="yearDropdown_left" prefWidth="150.0">
                      <HBox.margin>
                         <Insets right="5.0" />
                      </HBox.margin>
@@ -66,7 +66,7 @@
                         <Insets />
                      </HBox.margin>
                   </Region>
-                  <ChoiceBox fx:id="yearDropdown1" prefWidth="150.0">
+                  <ChoiceBox fx:id="yearDropdown_right" prefWidth="150.0">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>

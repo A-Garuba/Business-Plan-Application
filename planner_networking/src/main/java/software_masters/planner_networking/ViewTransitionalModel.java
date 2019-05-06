@@ -5,8 +5,10 @@ import java.io.IOException;
 public interface ViewTransitionalModel
 {
 
-	public void showMainView() throws IOException, Exception;
+	public void showMain() throws IOException, Exception;
 
 	public void showLogin() throws IOException;
+	
+	public void showCompare() throws IOException, Exception;
 
 }

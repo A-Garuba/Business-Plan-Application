@@ -84,7 +84,7 @@ public class LoginController
 				// TODO set server somehow //
 				client.login(user, pass);
 				// TODO reset scene and switch to ClientView
-				vtmodel.showMainView();
+				vtmodel.showMain();
 			} catch (IllegalArgumentException e)
 			{
 				badLogin.setVisible(true);

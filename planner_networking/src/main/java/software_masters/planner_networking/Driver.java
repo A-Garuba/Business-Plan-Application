@@ -20,8 +20,11 @@ public class Driver extends Application implements ViewTransitionalModel
 
 	private Registry registry;
 	private Client client;
-	private LoginController controller;
+	
+	private LoginController loginController;
 	private MainController mainController;
+	private CompareController compareController;
+	
 	private Stage stage;
 
 	/**
@@ -100,25 +103,39 @@ public class Driver extends Application implements ViewTransitionalModel
 		Parent root = (Parent) loader.load();
 		Scene scene = new Scene(root);
 
-		controller = loader.getController();
-		controller.setClient(client);
-		controller.setViewTransitionalModel(this);
+		loginController = loader.getController();
+		loginController.setClient(client);
+		loginController.setViewTransitionalModel(this);
 		stage.setScene(scene);
 
 	}
 
-	public void showMainView() throws Exception
+	public void showMain() throws Exception
 	{
-		FXMLLoader loader2 = new FXMLLoader(getClass().getResource("MainScene.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("MainScene.fxml"));
 
-		Parent root2 = (Parent) loader2.load();
-		Scene scene2 = new Scene(root2);
+		Parent root = (Parent) loader.load();
+		Scene scene = new Scene(root);
 
-		mainController = loader2.getController();
+		mainController = loader.getController();
 		mainController.setClient(client);
 		mainController.setViewTransitionalModel(this);
 		mainController.getPlans(mainController.yearDropdown);
-		stage.setScene(scene2);
+		stage.setScene(scene);
+	}
+	
+	public void showCompare() throws Exception
+	{
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("CompareScene.fxml"));
+
+		Parent root = (Parent) loader.load();
+		Scene scene = new Scene(root);
+
+		compareController = loader.getController();
+		compareController.setClient(client);
+		compareController.setViewTransitionalModel(this);
+		//compareController.getPlans(compareController.yearDropdown);
+		stage.setScene(scene);
 	}
 
 }
