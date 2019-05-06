@@ -136,6 +136,18 @@ public class MainController
 		}
 		vtmodel.showLogin();
 	}
+	
+	/**
+	 * This function allows the 'Compare' button to switch the stage to the CompareScene view
+	 * @param event
+	 * @throws IOException
+	 * @throws Exception
+	 */
+	@FXML
+	void compare(MouseEvent event) throws IOException, Exception
+	{
+		vtmodel.showCompare();
+	}
 
 	@FXML
 	void newPlan(MouseEvent event) throws Exception

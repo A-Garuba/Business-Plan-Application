@@ -16,7 +16,7 @@
          <children>
             <Region prefHeight="33.0" prefWidth="71.0" />
             <Button fx:id="compareButton" mnemonicParsing="false" text="Compare" />
-            <Button fx:id="returnButton" layoutX="10.0" layoutY="62.0" mnemonicParsing="false" text="Return" />
+            <Button fx:id="returnButton" layoutX="10.0" layoutY="62.0" mnemonicParsing="false" onMouseClicked="#ret" text="Return" />
             <Region prefHeight="25.0" prefWidth="24.0" VBox.vgrow="ALWAYS">
                <VBox.margin>
                   <Insets />

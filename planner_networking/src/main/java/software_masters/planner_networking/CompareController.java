@@ -65,5 +65,17 @@ public class CompareController
 			vtmodel.showLogin();
 		}
 	}
+	
+	/**
+	 * This function allows the 'Return' button to switch the stage to the MainScene view
+	 * @param event
+	 * @throws IOException
+	 * @throws Exception
+	 */
+	@FXML
+	void ret(MouseEvent event) throws IOException, Exception
+	{
+		vtmodel.showMain();
+	}
 
 }
