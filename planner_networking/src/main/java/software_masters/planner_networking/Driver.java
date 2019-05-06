@@ -95,7 +95,10 @@ public class Driver extends Application implements ViewTransitionalModel
 			stage.close();
 		}
 	}
-
+	
+	/**
+	 * Switches the scene to the login scene by loading from fxml file
+	 */
 	public void showLogin() throws IOException
 	{
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginScene.fxml"));
@@ -109,7 +112,10 @@ public class Driver extends Application implements ViewTransitionalModel
 		stage.setScene(scene);
 
 	}
-
+	
+	/**
+	 * Switches the scene to the main scene by loading from fxml file
+	 */
 	public void showMain() throws Exception
 	{
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("MainScene.fxml"));
@@ -124,6 +130,9 @@ public class Driver extends Application implements ViewTransitionalModel
 		stage.setScene(scene);
 	}
 	
+	/**
+	 * Switches the scene to the compare scene by loading from fxml file
+	 */
 	public void showCompare() throws Exception
 	{
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("CompareScene.fxml"));
@@ -134,7 +143,8 @@ public class Driver extends Application implements ViewTransitionalModel
 		compareController = loader.getController();
 		compareController.setClient(client);
 		compareController.setViewTransitionalModel(this);
-		//compareController.getPlans(compareController.yearDropdown);
+		compareController.getPlans(compareController.yearDropdown_left);
+		compareController.getPlans(compareController.yearDropdown_right);
 		stage.setScene(scene);
 	}
 

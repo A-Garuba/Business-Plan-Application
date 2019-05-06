@@ -14,10 +14,7 @@ import javafx.scene.input.MouseEvent;
 
 public class MainController
 {
-
-	@FXML
-	ChoiceBox<PlanFile> yearDropdown;
-
+	
 	@FXML
 	private Button yearSelectButton;
 
@@ -50,7 +47,11 @@ public class MainController
 
 	@FXML
 	private TreeView<Node> tree;
-
+	
+	@FXML
+	ChoiceBox<PlanFile> yearDropdown;
+	
+	//Non-FX attributes
 	private Client client;
 
 	private TreeItem<Node> currNode;
@@ -58,17 +59,6 @@ public class MainController
 	ViewTransitionalModel vtmodel;
 
 	ChangeListener<String> listener;
-
-	public void setViewTransitionalModel(ViewTransitionalModel model)
-	{
-		this.vtmodel = model;
-	}
-
-	public void setClient(Client client)
-	{
-
-		this.client = client;
-	}
 
 	@FXML
 	void addBranch(MouseEvent event) throws Exception
@@ -90,7 +80,7 @@ public class MainController
 		yearDropdown.setDisable(true);
 		tree.setRoot(makeDeepCopy(year).getRoot());
 		tree.getSelectionModel().selectedItemProperty()
-				.addListener((v, oldValue, newValue) -> tree_SelectionChanged(newValue));
+				.addListener((v, oldValue, newValue) -> treeSelectionChanged(newValue));
 		editButton.setText("View");
 		editButton.setDisable(true);
 		saveButton.setDisable(true);
@@ -117,7 +107,6 @@ public class MainController
 			saveButton.setDisable(true);
 			copyButton.setDisable(true);
 		}
-
 	}
 
 	@FXML
@@ -176,7 +165,6 @@ public class MainController
 		{
 			System.out.println("Please enter a valid year please");
 		}
-
 	}
 
 	@FXML
@@ -187,10 +175,9 @@ public class MainController
 		tree.setRoot(makeTree(yearDropdown.getValue().getYear()).getRoot());
 
 		tree.getSelectionModel().selectedItemProperty()
-				.addListener((v, oldValue, newValue) -> tree_SelectionChanged(newValue));
+				.addListener((v, oldValue, newValue) -> treeSelectionChanged(newValue));
 		editButton.setText("View");
 		edit(event);
-
 	}
 
 	@FXML
@@ -215,7 +202,7 @@ public class MainController
 		currNode.getValue().setData(newvalue);
 	}
 
-	void tree_SelectionChanged(TreeItem<Node> item)
+	void treeSelectionChanged(TreeItem<Node> item)
 	{
 		if (listener != null)
 		{
@@ -235,7 +222,6 @@ public class MainController
 		}
 		listener = (observable, oldvalue, newvalue) -> setText(newvalue);
 		contentField.textProperty().addListener(listener);
-
 	}
 
 	/**
@@ -286,7 +272,6 @@ public class MainController
 				recursiveSearch(tree1);
 			}
 		}
-
 	}
 
 	/**
@@ -339,7 +324,6 @@ public class MainController
 		treeRoot.setExpanded(true);
 		recursiveSearch(treeRoot);
 		return new TreeView<Node>(treeRoot);
-
 	}
 
 	/**
@@ -362,7 +346,17 @@ public class MainController
 				deepCopier(master.getChildren().get(i), tree1);
 			}
 		}
+	}
+	
+	public void setViewTransitionalModel(ViewTransitionalModel model)
+	{
+		this.vtmodel = model;
+	}
 
+	public void setClient(Client client)
+	{
+
+		this.client = client;
 	}
 
 }
