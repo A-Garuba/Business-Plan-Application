@@ -1,15 +1,18 @@
 GUI Testing:
-Run main/ServerImplementation.java then test/GUIMainTest.java, test/LoginTest.java
+Run main/ServerImplementation.java ---> test/CommentTest.java, test/CompareTest.java test/GUIMainTest.java, test/LoginTest.java
 
-GUI implementation authors:
+Compare/Comment features (Sprint V): 
+https://docs.google.com/document/d/17hXDNpxIpGrsZX0Zde1qRE1gfpMRaa-lKnMoqqVyqes/edit?usp=sharing
+
+GUI implementation authors (Sprint IV):
 https://docs.google.com/document/d/1JGaaPfpaPN0RE5hOiXL-lZ0hIkXgPw4YOGTwIwnPAcY/edit?usp=sharing
 
 ______________________________________________________________________________
 
-This is the testing guide for sprint 3
+This is the testing guide for sprint III
 https://docs.google.com/document/d/191hfuDoQ1cgvpK79QYWPwGwT6N__S5hoKtWFixUR7Bc/edit?usp=sharing
 
-This is our design document for sprint 1 and 2:
+design document for sprint I and II:
 https://docs.google.com/document/d/1usWl9l82Wa1OelQTavswDzb6ZTNx1EhyaA9iFIS7zCY/edit?usp=sharing
 
 Testing Notes:
