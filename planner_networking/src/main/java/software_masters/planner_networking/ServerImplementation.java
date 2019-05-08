@@ -614,7 +614,7 @@ public class ServerImplementation implements Server
 		}
 
 	}
-	
+
 	/**
 	 * Saves any submitted comment to the user's department's planfile
 	 *

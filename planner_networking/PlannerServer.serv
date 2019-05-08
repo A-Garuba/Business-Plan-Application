@@ -6,8 +6,16 @@
     <string>0</string>
     <void id="Department0" property="department">
      <void id="ConcurrentHashMap1" property="planFileMap">
+      <void id="PlanFile0" method="get">
+       <string>2019</string>
+       <void property="plan">
+        <void property="name">
+         <null/>
+        </void>
+       </void>
+      </void>
       <void method="put">
-       <string>2009</string>
+       <string>2020</string>
        <object class="software_masters.planner_networking.PlanFile">
         <void property="canEdit">
          <boolean>true</boolean>
@@ -24,17 +32,17 @@
                  <void id="ArrayList3" property="children">
                   <void index="0">
                    <void property="data">
-                    <string>Passing sprint 1 grade</string>
+                    <string>Results 1</string>
                    </void>
                   </void>
                  </void>
                  <void property="data">
-                  <string>Sprint 1</string>
+                  <string>Assessment Process 1</string>
                  </void>
                 </void>
                </void>
                <void property="data">
-                <string>Learn how to use eclipse</string>
+                <string>Learning Objective 1</string>
                </void>
               </void>
               <void method="add">
@@ -46,7 +54,7 @@
                     <void method="add">
                      <object class="software_masters.planner_networking.Node">
                       <void property="data">
-                       <string>Git abilities</string>
+                       <string>Results 2</string>
                       </void>
                       <void property="name">
                        <string>Results</string>
@@ -58,7 +66,7 @@
                     </void>
                    </void>
                    <void property="data">
-                    <string>Using git staging</string>
+                    <string>Assessment Process 2</string>
                    </void>
                    <void property="name">
                     <string>Assessment Process</string>
@@ -70,7 +78,7 @@
                  </void>
                 </void>
                 <void property="data">
-                 <string>Learn to use git</string>
+                 <string>Learning Objective 2</string>
                 </void>
                 <void property="name">
                  <string>Learning Objective</string>
@@ -82,361 +90,12 @@
               </void>
              </void>
              <void property="data">
-              <string>Our goal is to ensure that I get credit for this class.</string>
-             </void>
-            </void>
-           </void>
-           <void property="comments">
-            <void method="add">
-             <string>user: This mission needs to be updated</string>
-            </void>
-           </void>
-           <void property="data">
-            <string>Our mission is to pass this class hopefully now</string>
-           </void>
-          </void>
-         </object>
-        </void>
-        <void property="year">
-         <string>2009</string>
-        </void>
-       </object>
-      </void>
-      <void id="PlanFile0" method="get">
-       <string>2019</string>
-       <void id="Centre1" property="plan">
-        <void property="name">
-         <null/>
-        </void>
-        <void id="Node6" property="root">
-         <void id="ArrayList4" property="children">
-          <void id="Node7" index="0">
-           <void id="ArrayList5" property="children">
-            <void id="Node8" index="0">
-             <void id="ArrayList6" property="children">
-              <void id="Node9" index="0">
-               <void id="ArrayList7" property="children">
-                <void index="0">
-                 <void property="data">
-                  <string>Passing sprint 1 grade</string>
-                 </void>
-                </void>
-               </void>
-               <void property="data">
-                <string>Sprint 1</string>
-               </void>
-              </void>
-              <void method="add">
-               <object class="software_masters.planner_networking.Node" id="Node10">
-                <void property="children">
-                 <void method="add">
-                  <object class="software_masters.planner_networking.Node">
-                   <void property="data">
-                    <string>Passing sprint 2</string>
-                   </void>
-                   <void property="name">
-                    <string>Results</string>
-                   </void>
-                   <void property="parent">
-                    <object idref="Node10"/>
-                   </void>
-                  </object>
-                 </void>
-                </void>
-                <void property="data">
-                 <string>Sprint 2</string>
-                </void>
-                <void property="name">
-                 <string>Assessment Process</string>
-                </void>
-                <void property="parent">
-                 <object idref="Node8"/>
-                </void>
-               </object>
-              </void>
-             </void>
-             <void property="data">
-              <string>Learn how to use eclipse</string>
+              <string>Goal 1</string>
              </void>
             </void>
            </void>
            <void property="data">
-            <string>Our goal is to ensure that I get credit for this class.</string>
-           </void>
-          </void>
-         </void>
-         <void property="data">
-          <string>Our mission is to pass this class excellently</string>
-         </void>
-        </void>
-       </void>
-      </void>
-      <void method="put">
-       <string>2018</string>
-       <object class="software_masters.planner_networking.PlanFile">
-        <void property="canEdit">
-         <boolean>true</boolean>
-        </void>
-        <void property="plan">
-         <object class="software_masters.planner_networking.Centre" id="Centre2">
-          <void id="Node11" property="root">
-           <void id="ArrayList8" property="children">
-            <void id="Node12" index="0">
-             <void id="ArrayList9" property="children">
-              <void id="Node13" index="0">
-               <void id="ArrayList10" property="children">
-                <void id="Node14" index="0">
-                 <void id="ArrayList11" property="children">
-                  <void index="0">
-                   <void property="data">
-                    <string>Result 2018</string>
-                   </void>
-                  </void>
-                 </void>
-                 <void property="data">
-                  <string>AP 2018</string>
-                 </void>
-                </void>
-               </void>
-               <void property="data">
-                <string>LO 2018</string>
-               </void>
-              </void>
-             </void>
-             <void property="data">
-              <string>Goal 2018</string>
-             </void>
-            </void>
-           </void>
-           <void property="data">
-            <string>Mission 2018</string>
-           </void>
-          </void>
-         </object>
-        </void>
-        <void property="year">
-         <string>2018</string>
-        </void>
-       </object>
-      </void>
-      <void method="put">
-       <string>2016</string>
-       <object class="software_masters.planner_networking.PlanFile">
-        <void property="canEdit">
-         <boolean>true</boolean>
-        </void>
-        <void property="plan">
-         <object class="software_masters.planner_networking.Centre" id="Centre3">
-          <void id="Node15" property="root">
-           <void id="ArrayList12" property="children">
-            <void index="0">
-             <void property="data">
-              <string>Goal 2016</string>
-             </void>
-            </void>
-           </void>
-           <void property="data">
-            <string>Mission 2016</string>
-           </void>
-          </void>
-         </object>
-        </void>
-        <void property="year">
-         <string>2016</string>
-        </void>
-       </object>
-      </void>
-      <void method="put">
-       <string>2010</string>
-       <object class="software_masters.planner_networking.PlanFile">
-        <void property="canEdit">
-         <boolean>true</boolean>
-        </void>
-        <void property="plan">
-         <object class="software_masters.planner_networking.Centre" id="Centre4">
-          <void id="Node16" property="root">
-           <void id="ArrayList13" property="children">
-            <void id="Node17" index="0">
-             <void id="ArrayList14" property="children">
-              <void id="Node18" index="0">
-               <void id="ArrayList15" property="children">
-                <void id="Node19" index="0">
-                 <void id="ArrayList16" property="children">
-                  <void index="0">
-                   <void property="data">
-                    <string>Result 2010</string>
-                   </void>
-                  </void>
-                 </void>
-                 <void property="data">
-                  <string>AP 2010</string>
-                 </void>
-                </void>
-               </void>
-               <void property="data">
-                <string>LO 2010</string>
-               </void>
-              </void>
-             </void>
-             <void property="data">
-              <string>Goal 2010</string>
-             </void>
-            </void>
-           </void>
-           <void property="data">
-            <string>Mission 2010</string>
-           </void>
-          </void>
-         </object>
-        </void>
-        <void property="year">
-         <string>2010</string>
-        </void>
-       </object>
-      </void>
-      <void method="put">
-       <string>2021</string>
-       <object class="software_masters.planner_networking.PlanFile">
-        <void property="canEdit">
-         <boolean>true</boolean>
-        </void>
-        <void property="plan">
-         <object class="software_masters.planner_networking.Centre" id="Centre5">
-          <void id="Node20" property="root">
-           <void id="ArrayList17" property="children">
-            <void id="Node21" index="0">
-             <void id="ArrayList18" property="children">
-              <void id="Node22" index="0">
-               <void id="ArrayList19" property="children">
-                <void id="Node23" index="0">
-                 <void id="ArrayList20" property="children">
-                  <void index="0">
-                   <void property="data">
-                    <string>Passing sprint 1 grade</string>
-                   </void>
-                  </void>
-                 </void>
-                 <void property="data">
-                  <string>Sprint 1</string>
-                 </void>
-                </void>
-               </void>
-               <void property="data">
-                <string>Learn how to use eclipse</string>
-               </void>
-              </void>
-              <void method="add">
-               <object class="software_masters.planner_networking.Node" id="Node24">
-                <void property="children">
-                 <void method="add">
-                  <object class="software_masters.planner_networking.Node">
-                   <void property="data">
-                    <string>Passing sprint 2</string>
-                   </void>
-                   <void property="name">
-                    <string>Results</string>
-                   </void>
-                   <void property="parent">
-                    <object idref="Node24"/>
-                   </void>
-                  </object>
-                 </void>
-                </void>
-                <void property="data">
-                 <string>Sprint 2</string>
-                </void>
-                <void property="name">
-                 <string>Assessment Process</string>
-                </void>
-                <void property="parent">
-                 <object idref="Node21"/>
-                </void>
-               </object>
-              </void>
-             </void>
-             <void property="data">
-              <string>Our goal is to ensure that I get credit for this class.</string>
-             </void>
-            </void>
-           </void>
-           <void property="data">
-            <string>Our mission is to pass this class excellently</string>
-           </void>
-          </void>
-         </object>
-        </void>
-        <void property="year">
-         <string>2021</string>
-        </void>
-       </object>
-      </void>
-      <void method="put">
-       <string>2020</string>
-       <object class="software_masters.planner_networking.PlanFile">
-        <void property="canEdit">
-         <boolean>true</boolean>
-        </void>
-        <void property="plan">
-         <object class="software_masters.planner_networking.Centre" id="Centre6">
-          <void id="Node25" property="root">
-           <void id="ArrayList21" property="children">
-            <void id="Node26" index="0">
-             <void id="ArrayList22" property="children">
-              <void id="Node27" index="0">
-               <void id="ArrayList23" property="children">
-                <void id="Node28" index="0">
-                 <void id="ArrayList24" property="children">
-                  <void index="0">
-                   <void property="data">
-                    <string>Passing sprint 1 grade</string>
-                   </void>
-                  </void>
-                 </void>
-                 <void property="data">
-                  <string>Sprint 1</string>
-                 </void>
-                </void>
-                <void method="add">
-                 <object class="software_masters.planner_networking.Node" id="Node29">
-                  <void property="children">
-                   <void method="add">
-                    <object class="software_masters.planner_networking.Node">
-                     <void property="data">
-                      <string>Passing sprint 2</string>
-                     </void>
-                     <void property="name">
-                      <string>Results</string>
-                     </void>
-                     <void property="parent">
-                      <object idref="Node29"/>
-                     </void>
-                    </object>
-                   </void>
-                  </void>
-                  <void property="data">
-                   <string>Sprint 2</string>
-                  </void>
-                  <void property="name">
-                   <string>Assessment Process</string>
-                  </void>
-                  <void property="parent">
-                   <object idref="Node27"/>
-                  </void>
-                 </object>
-                </void>
-               </void>
-               <void property="data">
-                <string>Learn how to use eclipse</string>
-               </void>
-              </void>
-             </void>
-             <void property="data">
-              <string>Our goal is to ensure that I get credit for this class.</string>
-             </void>
-            </void>
-           </void>
-           <void property="data">
-            <string>Our mission is to pass this class excellently</string>
+            <string>Mission 1</string>
            </void>
           </void>
          </object>
@@ -448,6 +107,19 @@
       </void>
      </void>
     </void>
+   </void>
+  </void>
+  <void property="planTemplateMap">
+   <void method="put">
+    <string>IowaState</string>
+    <object class="software_masters.planner_networking.PlanFile">
+     <void property="canEdit">
+      <boolean>true</boolean>
+     </void>
+     <void property="plan">
+      <object class="software_masters.planner_networking.IowaState"/>
+     </void>
+    </object>
    </void>
   </void>
  </object>

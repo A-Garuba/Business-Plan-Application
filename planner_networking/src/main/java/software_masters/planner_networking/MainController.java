@@ -14,7 +14,7 @@ import javafx.scene.input.MouseEvent;
 
 public class MainController
 {
-	
+
 	@FXML
 	private Button yearSelectButton;
 
@@ -35,21 +35,21 @@ public class MainController
 
 	@FXML
 	private Button logout;
-	
-    @FXML
-    private Button deleteButton;
 
-    @FXML
-    private Button commentButton;
-    
-    @FXML
-    private ListView<String> commentArea;
-	
-    @FXML
-    private TextField contentField;
+	@FXML
+	private Button deleteButton;
 
-    @FXML
-    private TextField commentField;
+	@FXML
+	private Button commentButton;
+
+	@FXML
+	private ListView<String> commentArea;
+
+	@FXML
+	private TextField contentField;
+
+	@FXML
+	private TextField commentField;
 
 	@FXML
 	private TextField newYearTxtField;
@@ -59,14 +59,14 @@ public class MainController
 
 	@FXML
 	private TreeView<Node> tree;
-	
+
 	@FXML
 	ChoiceBox<PlanFile> yearDropdown;
-	
+
 	@FXML
 	private Label commentError;
-	
-	//Non-FX attributes
+
+	// Non-FX attributes
 	private Client client;
 
 	private TreeItem<Node> currNode;
@@ -80,35 +80,35 @@ public class MainController
 	{
 		addBranch(currNode, yearDropdown.getValue().getYear());
 	}
-	
+
 	/**
-	 * This functions allows any user to add a comment to any selected plan section by typing in the
-	 * comment TextField and pressing the 'Enter' button
+	 * This functions allows any user to add a comment to any selected plan section
+	 * by typing in the comment TextField and pressing the 'Enter' button
+	 * 
 	 * @param event
-	 * @throws RemoteException 
+	 * @throws RemoteException
 	 */
 	@FXML
 	void addComment(MouseEvent event) throws RemoteException
 	{
 		commentError.setVisible(false);
-		if (commentField.getText() == null)
+		if (commentField.getText().isEmpty() || commentField.getText() == null)
 		{
 			commentError.setVisible(true);
-		}
-		else
+		} else
 		{
 			currNode.getValue().addComment(client.getUser() + ": " + commentField.getText());
-			
+
 			commentField.setText("");
 			updateComments(currNode);
-			
+
 			saveComment(tree.getRoot().getValue(), yearDropdown.getValue().getYear());
 		}
 	}
-	
+
 	/**
-	 * This function allows any user to delete any comment selected in the comment TextArea by pressing the
-	 * 'Delete Selected Comment' button
+	 * This function allows any user to delete any comment selected in the comment
+	 * TextArea by pressing the 'Delete Selected Comment' button
 	 * 
 	 * @param event
 	 * @throws RemoteException
@@ -117,12 +117,15 @@ public class MainController
 	void deleteComment(MouseEvent event) throws RemoteException
 	{
 		String comment = commentArea.getSelectionModel().getSelectedItem();
-		currNode.getValue().removeComment(comment);
-		updateComments(currNode);
-		
-		saveComment(tree.getRoot().getValue(), yearDropdown.getValue().getYear());
+		if (comment != null && !comment.isEmpty())
+		{
+			currNode.getValue().removeComment(comment);
+			updateComments(currNode);
+
+			saveComment(tree.getRoot().getValue(), yearDropdown.getValue().getYear());
+		}
 	}
-	
+
 	/**
 	 * Saves a planFile to the server for commenting purposes
 	 * 
@@ -136,7 +139,7 @@ public class MainController
 		PlanFile planF = new PlanFile(s, true, plan);
 		client.pushComment(planF);
 	}
-	
+
 	/**
 	 * This function handles the user pressing "ENTER" while entering a comment
 	 * 
@@ -211,9 +214,11 @@ public class MainController
 		}
 		vtmodel.showLogin();
 	}
-	
+
 	/**
-	 * This function allows the 'Compare' button to switch the stage to the CompareScene view
+	 * This function allows the 'Compare' button to switch the stage to the
+	 * CompareScene view
+	 * 
 	 * @param event
 	 * @throws IOException
 	 * @throws Exception
@@ -262,7 +267,7 @@ public class MainController
 		commentField.setDisable(true);
 		commentArea.setItems(null);
 		contentField.setDisable(false);
-		
+
 		tree.setRoot(makeTree(yearDropdown.getValue().getYear()).getRoot());
 
 		tree.getSelectionModel().selectedItemProperty()
@@ -304,11 +309,11 @@ public class MainController
 		{
 			String str = item.getValue().getData();
 			contentField.setText(str);
-			
+
 			commentButton.setDisable(false);
 			commentField.setDisable(false);
 			updateComments(item);
-			
+
 			this.currNode = item;
 			if (editButton.getText().contentEquals("View"))
 			{
@@ -319,9 +324,10 @@ public class MainController
 		listener = (observable, oldvalue, newvalue) -> setText(newvalue);
 		contentField.textProperty().addListener(listener);
 	}
-	
+
 	/**
-	 * This function updates the commentArea with the comments stored in the TreeItem's Node
+	 * This function updates the commentArea with the comments stored in the
+	 * TreeItem's Node
 	 * 
 	 * @param selected TreeItem<Node> that is currently selected
 	 */
@@ -329,16 +335,16 @@ public class MainController
 	{
 		ArrayList<String> comments = selected.getValue().getComments();
 		ObservableList<String> data = FXCollections.observableArrayList();
-		for (String i: comments)
+		for (String i : comments)
 		{
 			data.add(i);
 		}
-		
+
 		commentArea.setItems(data);
-		
+
 		deleteButton.setDisable(commentArea.getItems().size() < 1);
 	}
-	
+
 	/**
 	 * Gets the plans of the department for display in a choiceBox
 	 * 
@@ -462,7 +468,7 @@ public class MainController
 			}
 		}
 	}
-	
+
 	public void setViewTransitionalModel(ViewTransitionalModel model)
 	{
 		this.vtmodel = model;

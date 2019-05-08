@@ -20,11 +20,11 @@ public class Driver extends Application implements ViewTransitionalModel
 
 	private Registry registry;
 	private Client client;
-	
+
 	private LoginController loginController;
 	private MainController mainController;
 	private CompareController compareController;
-	
+
 	private Stage stage;
 
 	/**
@@ -95,7 +95,7 @@ public class Driver extends Application implements ViewTransitionalModel
 			stage.close();
 		}
 	}
-	
+
 	/**
 	 * Switches the scene to the login scene by loading from fxml file
 	 */
@@ -112,7 +112,7 @@ public class Driver extends Application implements ViewTransitionalModel
 		stage.setScene(scene);
 
 	}
-	
+
 	/**
 	 * Switches the scene to the main scene by loading from fxml file
 	 */
@@ -129,7 +129,7 @@ public class Driver extends Application implements ViewTransitionalModel
 		mainController.getPlans(mainController.yearDropdown);
 		stage.setScene(scene);
 	}
-	
+
 	/**
 	 * Switches the scene to the compare scene by loading from fxml file
 	 */

@@ -23,7 +23,7 @@ public class LoginTest extends ApplicationTest
 	@BeforeClass
 	public static void setUpClass() throws Exception
 	{
-		//ServerImplementation.main(null);
+		// ServerImplementation.main(null);
 		ApplicationTest.launch(Driver.class);
 	}
 

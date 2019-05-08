@@ -12,14 +12,13 @@ import java.util.ArrayList;
 public class Node implements Serializable
 {
 	private static final long serialVersionUID = 5908372020728915437L;
-	
+
 	private Node parent;
 	private String name;
 	private String data;
-	
+
 	private ArrayList<Node> children = new ArrayList<Node>();
 	private ArrayList<String> comments = new ArrayList<String>();
-
 
 	/**
 	 * Takes a Node parent, String name, String data, and list of children Sets
@@ -30,7 +29,8 @@ public class Node implements Serializable
 	 * @param data   data for node
 	 * @param child  list of children
 	 */
-	public Node(Node parent, String name, String data, ArrayList<Node> child, ArrayList<String> comments) throws RemoteException
+	public Node(Node parent, String name, String data, ArrayList<Node> child, ArrayList<String> comments)
+			throws RemoteException
 	{
 		this.name = name;
 		this.parent = parent;
@@ -121,7 +121,7 @@ public class Node implements Serializable
 	{
 		return children;
 	}
-	
+
 	/**
 	 * Setter for children ArrayList of Nodes
 	 * 
@@ -146,7 +146,7 @@ public class Node implements Serializable
 	{
 		this.comments = comments;
 	}
-	
+
 	/**
 	 * This function adds a String to the comments ArrayList
 	 * 
@@ -156,7 +156,7 @@ public class Node implements Serializable
 	{
 		comments.add(comment);
 	}
-	
+
 	/**
 	 * This function removes a String from the comments ArrayList
 	 * 
@@ -176,7 +176,7 @@ public class Node implements Serializable
 	{
 		children.add(child);
 	}
-	
+
 	/**
 	 * remove child node from a node's children list
 	 * 

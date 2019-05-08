@@ -102,7 +102,7 @@ public class Client
 	{
 		server.savePlan(plan, cookie);
 	}
-	
+
 	/**
 	 * Saves planFile to the user's department for comment-saving purposes
 	 * 
