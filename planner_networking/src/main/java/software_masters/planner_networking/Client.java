@@ -102,6 +102,17 @@ public class Client
 	{
 		server.savePlan(plan, cookie);
 	}
+	
+	/**
+	 * Saves planFile to the user's department for comment-saving purposes
+	 * 
+	 * @param plan
+	 * @throws IllegalArgumentException
+	 */
+	public void pushComment(PlanFile plan) throws IllegalArgumentException, RemoteException
+	{
+		server.saveComment(plan, cookie);
+	}
 
 	/**
 	 * Adds new user to loginMap, generates new cookie for user and adds to

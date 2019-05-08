@@ -58,6 +58,15 @@ public interface Server extends Remote
 	 * @throws IllegalArgumentException
 	 */
 	void savePlan(PlanFile plan, String cookie) throws IllegalArgumentException, RemoteException;
+	
+	/**
+	 * Saves any submitted comment to the user's department's planfile
+	 *
+	 * @param plan
+	 * @param cookie
+	 * @throws RemoteException
+	 */
+	void saveComment(PlanFile plan, String cookie) throws RemoteException;
 
 	/**
 	 * Adds new user to loginMap, generates new cookie for user and adds to

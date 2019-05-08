@@ -86,6 +86,11 @@
              </void>
             </void>
            </void>
+           <void property="comments">
+            <void method="add">
+             <string>user: This mission needs to be updated</string>
+            </void>
+           </void>
            <void property="data">
             <string>Our mission is to pass this class hopefully now</string>
            </void>

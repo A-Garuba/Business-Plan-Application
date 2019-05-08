@@ -9,6 +9,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
 public class MainController
@@ -62,6 +63,9 @@ public class MainController
 	@FXML
 	ChoiceBox<PlanFile> yearDropdown;
 	
+	@FXML
+	private Label commentError;
+	
 	//Non-FX attributes
 	private Client client;
 
@@ -77,16 +81,74 @@ public class MainController
 		addBranch(currNode, yearDropdown.getValue().getYear());
 	}
 	
+	/**
+	 * This functions allows any user to add a comment to any selected plan section by typing in the
+	 * comment TextField and pressing the 'Enter' button
+	 * @param event
+	 * @throws RemoteException 
+	 */
 	@FXML
-	void addComment(MouseEvent event)
+	void addComment(MouseEvent event) throws RemoteException
 	{
+		commentError.setVisible(false);
 		if (commentField.getText() == null)
 		{
-			
+			commentError.setVisible(true);
 		}
 		else
 		{
-			yearDropdown.getValue().getPlan().getRoot().addComment(client.getUser() + ": " + commentField.getText());
+			currNode.getValue().addComment(client.getUser() + ": " + commentField.getText());
+			
+			commentField.setText("");
+			updateComments(currNode);
+			
+			saveComment(tree.getRoot().getValue(), yearDropdown.getValue().getYear());
+		}
+	}
+	
+	/**
+	 * This function allows any user to delete any comment selected in the comment TextArea by pressing the
+	 * 'Delete Selected Comment' button
+	 * 
+	 * @param event
+	 * @throws RemoteException
+	 */
+	@FXML
+	void deleteComment(MouseEvent event) throws RemoteException
+	{
+		String comment = commentArea.getSelectionModel().getSelectedItem();
+		currNode.getValue().removeComment(comment);
+		updateComments(currNode);
+		
+		saveComment(tree.getRoot().getValue(), yearDropdown.getValue().getYear());
+	}
+	
+	/**
+	 * Saves a planFile to the server for commenting purposes
+	 * 
+	 * @param node
+	 * @param s
+	 * @throws RemoteException
+	 */
+	public void saveComment(Node node, String s) throws RemoteException
+	{
+		Centre plan = new Centre(node);
+		PlanFile planF = new PlanFile(s, true, plan);
+		client.pushComment(planF);
+	}
+	
+	/**
+	 * This function handles the user pressing "ENTER" while entering a comment
+	 * 
+	 * @param e KeyEvent
+	 * @throws Exception
+	 */
+	@FXML
+	public void enterPressed(KeyEvent e) throws Exception
+	{
+		if (e.getCode().toString().equals("ENTER"))
+		{
+			addComment(null);
 		}
 	}
 
@@ -194,9 +256,13 @@ public class MainController
 	@FXML
 	void planChange(MouseEvent event) throws IllegalArgumentException, RemoteException
 	{
-		commentButton.setDisable(false);
 		editButton.setDisable(false);
 		logout.setDisable(false);
+		commentButton.setDisable(true);
+		commentField.setDisable(true);
+		commentArea.setItems(null);
+		contentField.setDisable(false);
+		
 		tree.setRoot(makeTree(yearDropdown.getValue().getYear()).getRoot());
 
 		tree.getSelectionModel().selectedItemProperty()
@@ -239,15 +305,9 @@ public class MainController
 			String str = item.getValue().getData();
 			contentField.setText(str);
 			
-			//update comments
-			ArrayList<String> comments = item.getValue().getComments();
-			ObservableList<String> data = FXCollections.observableArrayList();
-			for (String i: comments)
-			{
-				data.add(i);
-			}
-			
-			commentArea.setItems(data);
+			commentButton.setDisable(false);
+			commentField.setDisable(false);
+			updateComments(item);
 			
 			this.currNode = item;
 			if (editButton.getText().contentEquals("View"))
@@ -259,7 +319,26 @@ public class MainController
 		listener = (observable, oldvalue, newvalue) -> setText(newvalue);
 		contentField.textProperty().addListener(listener);
 	}
-
+	
+	/**
+	 * This function updates the commentArea with the comments stored in the TreeItem's Node
+	 * 
+	 * @param selected TreeItem<Node> that is currently selected
+	 */
+	public void updateComments(TreeItem<Node> selected)
+	{
+		ArrayList<String> comments = selected.getValue().getComments();
+		ObservableList<String> data = FXCollections.observableArrayList();
+		for (String i: comments)
+		{
+			data.add(i);
+		}
+		
+		commentArea.setItems(data);
+		
+		deleteButton.setDisable(commentArea.getItems().size() < 1);
+	}
+	
 	/**
 	 * Gets the plans of the department for display in a choiceBox
 	 * 

@@ -614,4 +614,26 @@ public class ServerImplementation implements Server
 		}
 
 	}
+	
+	/**
+	 * Saves any submitted comment to the user's department's planfile
+	 *
+	 * @param plan
+	 * @param cookie
+	 * @throws RemoteException
+	 */
+	public void saveComment(PlanFile plan, String cookie) throws RemoteException
+	{
+		cookieChecker(cookie);// checks that cookie is valid
+
+		if (plan.getYear() == null)// checks planFile is given a year
+		{
+			throw new IllegalArgumentException("This planFile needs a year!");
+		}
+
+		Account userAccount = cookieMap.get(cookie);
+		Department dept = userAccount.getDepartment();
+
+		dept.addPlan(plan.getYear(), plan);
+	}
 }

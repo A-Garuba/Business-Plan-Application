@@ -156,6 +156,16 @@ public class Node implements Serializable
 	{
 		comments.add(comment);
 	}
+	
+	/**
+	 * This function removes a String from the comments ArrayList
+	 * 
+	 * @param comment the comment to be removed
+	 */
+	public void removeComment(String comment)
+	{
+		comments.remove(comment);
+	}
 
 	/**
 	 * Takes a node child and adds child to child list
