@@ -21,6 +21,7 @@ public class Client
 	private PlanFile currPlanFile;
 	private Node currNode;
 	private Server server;
+	private String user;
 
 	/**
 	 * Sets the client's server.
@@ -44,6 +45,7 @@ public class Client
 	{
 		currPlanFile = null;
 		currNode = null;
+		user = username;
 		cookie = server.login(username, password);
 	}
 
@@ -159,7 +161,7 @@ public class Client
 
 		for (int i = index; i < names.size(); i++)
 		{
-			Node temp1 = new Node(temp, names.get(i), "Insert Content", null);
+			Node temp1 = new Node(temp, names.get(i), "Insert Content", null, null);
 			temp.getChildren().add(temp1);
 			temp = temp1;
 		}
@@ -266,6 +268,16 @@ public class Client
 	public void setServer(Server server)
 	{
 		this.server = server;
+	}
+
+	public String getUser()
+	{
+		return user;
+	}
+
+	public void setUser(String user)
+	{
+		this.user = user;
 	}
 
 }

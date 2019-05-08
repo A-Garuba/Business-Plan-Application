@@ -146,6 +146,16 @@ public class Node implements Serializable
 	{
 		this.comments = comments;
 	}
+	
+	/**
+	 * This function adds a String to the comments ArrayList
+	 * 
+	 * @param comment the comment to be added
+	 */
+	public void addComment(String comment)
+	{
+		comments.add(comment);
+	}
 
 	/**
 	 * Takes a node child and adds child to child list

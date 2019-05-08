@@ -5,6 +5,8 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 import javafx.beans.value.ChangeListener;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
@@ -40,7 +42,7 @@ public class MainController
     private Button commentButton;
     
     @FXML
-    private TextArea commentArea;
+    private ListView<String> commentArea;
 	
     @FXML
     private TextField contentField;
@@ -73,6 +75,19 @@ public class MainController
 	void addBranch(MouseEvent event) throws Exception
 	{
 		addBranch(currNode, yearDropdown.getValue().getYear());
+	}
+	
+	@FXML
+	void addComment(MouseEvent event)
+	{
+		if (commentField.getText() == null)
+		{
+			
+		}
+		else
+		{
+			yearDropdown.getValue().getPlan().getRoot().addComment(client.getUser() + ": " + commentField.getText());
+		}
 	}
 
 	@FXML
@@ -179,6 +194,7 @@ public class MainController
 	@FXML
 	void planChange(MouseEvent event) throws IllegalArgumentException, RemoteException
 	{
+		commentButton.setDisable(false);
 		editButton.setDisable(false);
 		logout.setDisable(false);
 		tree.setRoot(makeTree(yearDropdown.getValue().getYear()).getRoot());
@@ -223,12 +239,15 @@ public class MainController
 			String str = item.getValue().getData();
 			contentField.setText(str);
 			
+			//update comments
 			ArrayList<String> comments = item.getValue().getComments();
-			String comm = "";
+			ObservableList<String> data = FXCollections.observableArrayList();
 			for (String i: comments)
 			{
-				comm += i + "\n\n";
+				data.add(i);
 			}
+			
+			commentArea.setItems(data);
 			
 			this.currNode = item;
 			if (editButton.getText().contentEquals("View"))
@@ -335,7 +354,7 @@ public class MainController
 	{
 		client.getPlan(year);
 		Node master = client.getCurrNode();
-		Node copy = new Node(null, master.getName(), master.getData(), null);
+		Node copy = new Node(null, master.getName(), master.getData(), null, null);
 		deepCopier(master, copy);
 		TreeItem<Node> treeRoot = new TreeItem<Node>(copy);
 		treeRoot.setExpanded(true);
@@ -358,7 +377,7 @@ public class MainController
 			for (int i = 0; i < master.getChildren().size(); i++)
 			{
 				Node tree1 = new Node(copy, master.getChildren().get(i).getName(),
-						master.getChildren().get(i).getData(), null);
+						master.getChildren().get(i).getData(), null, null);
 				copy.getChildren().add(tree1);
 				deepCopier(master.getChildren().get(i), tree1);
 			}

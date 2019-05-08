@@ -60,7 +60,7 @@ public class IowaState extends Plan
 			for (int i = (getList().indexOf(parent.getName())) + 1; i < getList().size(); i++)
 			{
 
-				Node newNode = new Node(parent, getList().get(i), null, null);
+				Node newNode = new Node(parent, getList().get(i), null, null, null);
 
 				parent.addChild(newNode);
 				parent = newNode;

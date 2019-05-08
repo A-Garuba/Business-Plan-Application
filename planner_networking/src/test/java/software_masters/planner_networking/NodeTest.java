@@ -20,7 +20,7 @@ public class NodeTest
 		// get child when no child
 
 		// make tree node and test data methods
-		Node tree = new Node(null, "TreeNode", null, null);
+		Node tree = new Node(null, "TreeNode", null, null, null);
 		assertEquals("TreeNode", tree.getName());
 		tree.setName("Tree");
 		assertEquals("Tree", tree.getName());
@@ -33,25 +33,25 @@ public class NodeTest
 		assertEquals(true, tree.getChildren().isEmpty());
 
 		// make child nodes for tree, test addChild and getParent
-		Node n1 = new Node(tree, "Vision", null, null);
+		Node n1 = new Node(tree, "Vision", null, null, null);
 		tree.addChild(n1);
 		assertEquals(tree, n1.getParent());
 		assertEquals("Vision", n1.getName());
 		assertEquals(true, tree.getChildren().contains(n1));
 
-		Node n2 = new Node(tree, "node", null, null);
+		Node n2 = new Node(tree, "node", null, null, null);
 		tree.addChild(n2);
 		assertEquals(true, tree.getChildren().contains(n2));
 		assertEquals(tree, n2.getParent());
 
 		// add child to n2
-		Node n3 = new Node(n2, "node3", null, null);
+		Node n3 = new Node(n2, "node3", null, null, null);
 		n2.addChild(n3);
 		assertEquals(true, n2.getChildren().contains(n3));
 		assertEquals(n2, n3.getParent());
 
 		// add child to n3
-		Node n4 = new Node(n3, "node3", null, null);
+		Node n4 = new Node(n3, "node3", null, null, null);
 		n3.addChild(n4);
 
 		// get grandparent

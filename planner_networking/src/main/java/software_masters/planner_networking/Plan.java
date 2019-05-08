@@ -53,8 +53,8 @@ public abstract class Plan implements Serializable// extends UnicastRemoteObject
 	 */
 	protected void addDefaultNodes() throws RemoteException
 	{
-		root = new Node(null, defaultNodes.get(0), null, null);
-		Node newParent = new Node(root, defaultNodes.get(1), "Insert Content", null);
+		root = new Node(null, defaultNodes.get(0), null, null, null);
+		Node newParent = new Node(root, defaultNodes.get(1), "Insert Content", null, null);
 		root.addChild(newParent);
 		addNode(newParent);
 	}
