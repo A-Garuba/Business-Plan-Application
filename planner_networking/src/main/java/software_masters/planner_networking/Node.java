@@ -12,12 +12,15 @@ import java.util.ArrayList;
 public class Node implements Serializable
 {
 	private static final long serialVersionUID = 5908372020728915437L;
+	
 	private Node parent;
 	private String name;
 	private String data;
+	
 	private ArrayList<Node> children = new ArrayList<Node>();
+	private ArrayList<String> comments = new ArrayList<String>();
 
-	// constructor is data is not known
+
 	/**
 	 * Takes a Node parent, String name, String data, and list of children Sets
 	 * values in node
@@ -27,21 +30,23 @@ public class Node implements Serializable
 	 * @param data   data for node
 	 * @param child  list of children
 	 */
-	public Node(Node parent, String name, String data, ArrayList<Node> child) throws RemoteException
+	public Node(Node parent, String name, String data, ArrayList<Node> child, ArrayList<String> comments) throws RemoteException
 	{
 		this.name = name;
 		this.parent = parent;
 		this.data = data;
-
 	}
 
-	// empty constructor for XML
+	/**
+	 * empty constructor for XML
+	 * 
+	 * @throws RemoteException
+	 */
 	public Node() throws RemoteException
 	{
-		this(null, "blank", "empty", null);
+		this(null, "blank", "empty", null, null);
 	}
 
-	// Getter and setters
 	/**
 	 * returns a String name of node
 	 * 
@@ -110,21 +115,38 @@ public class Node implements Serializable
 	/**
 	 * Returns a list of children nodes
 	 * 
-	 * @return ArrayList list of children
+	 * @return ArrayList of children
 	 */
 	public ArrayList<Node> getChildren()
 	{
 		return children;
 	}
-
+	
+	/**
+	 * Setter for children ArrayList of Nodes
+	 * 
+	 * @param children
+	 */
 	public void setChildren(ArrayList<Node> children)
 	{
 		this.children = children;
 	}
 
-	//
+	/**
+	 * Getter for comment ArrayList of Strings
+	 * 
+	 * @return ArrayList of comments
+	 */
+	public ArrayList<String> getComments()
+	{
+		return comments;
+	}
 
-	// add a Node child to another node
+	public void setComments(ArrayList<String> comments)
+	{
+		this.comments = comments;
+	}
+
 	/**
 	 * Takes a node child and adds child to child list
 	 * 
@@ -134,9 +156,10 @@ public class Node implements Serializable
 	{
 		children.add(child);
 	}
-
-	// remove child node from a node's children list
+	
 	/**
+	 * remove child node from a node's children list
+	 * 
 	 * @param child child to be removed from this node
 	 */
 	public void removeChild(Node child)
@@ -147,11 +170,6 @@ public class Node implements Serializable
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
 	@Override
 	public boolean equals(Object obj)
 	{

@@ -2,14 +2,11 @@ package software_masters.planner_networking;
 
 import java.io.IOException;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 
 import javafx.beans.value.ChangeListener;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeView;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 
 public class MainController
@@ -35,9 +32,21 @@ public class MainController
 
 	@FXML
 	private Button logout;
+	
+    @FXML
+    private Button deleteButton;
 
-	@FXML
-	private TextField contentField;
+    @FXML
+    private Button commentButton;
+    
+    @FXML
+    private TextArea commentArea;
+	
+    @FXML
+    private TextField contentField;
+
+    @FXML
+    private TextField commentField;
 
 	@FXML
 	private TextField newYearTxtField;
@@ -213,6 +222,14 @@ public class MainController
 		{
 			String str = item.getValue().getData();
 			contentField.setText(str);
+			
+			ArrayList<String> comments = item.getValue().getComments();
+			String comm = "";
+			for (String i: comments)
+			{
+				comm += i + "\n\n";
+			}
+			
 			this.currNode = item;
 			if (editButton.getText().contentEquals("View"))
 			{

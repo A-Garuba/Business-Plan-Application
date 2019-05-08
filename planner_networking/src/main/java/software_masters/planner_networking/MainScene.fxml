@@ -57,18 +57,13 @@
                   <Label text="Fill in the Content Below:" />
                   <TextField fx:id="contentField" minHeight="-Infinity" prefHeight="90.0" prefWidth="300.0" />
                   <Region prefHeight="58.0" prefWidth="550.0" />
-                  <Button disable="true" mnemonicParsing="false" text="Mark Section Completed">
-                     <VBox.margin>
-                        <Insets left="5.0" />
-                     </VBox.margin>
-                  </Button>
                   <Region prefHeight="58.0" prefWidth="550.0" />
                   <Label text="Comments:" />
                   <ScrollPane prefHeight="117.0" prefWidth="550.0">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <TextArea fx:id="commentArea" prefHeight="341.0" prefWidth="533.0" />
+                              <TextArea fx:id="commentArea" editable="false" prefHeight="341.0" prefWidth="533.0" />
                            </children>
                         </AnchorPane>
                     </content>
@@ -81,6 +76,9 @@
                      </children>
                   </HBox>
                </children>
+               <BorderPane.margin>
+                  <Insets left="5.0" />
+               </BorderPane.margin>
             </VBox>
          </center>
          <top>

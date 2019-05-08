@@ -41,12 +41,27 @@
                <object class="software_masters.planner_networking.Node" id="Node4">
                 <void property="children">
                  <void method="add">
-                  <object class="software_masters.planner_networking.Node">
+                  <object class="software_masters.planner_networking.Node" id="Node5">
+                   <void property="children">
+                    <void method="add">
+                     <object class="software_masters.planner_networking.Node">
+                      <void property="data">
+                       <string>Git abilities</string>
+                      </void>
+                      <void property="name">
+                       <string>Results</string>
+                      </void>
+                      <void property="parent">
+                       <object idref="Node5"/>
+                      </void>
+                     </object>
+                    </void>
+                   </void>
                    <void property="data">
-                    <string>Passing sprint 2</string>
+                    <string>Using git staging</string>
                    </void>
                    <void property="name">
-                    <string>Results</string>
+                    <string>Assessment Process</string>
                    </void>
                    <void property="parent">
                     <object idref="Node4"/>
@@ -55,10 +70,10 @@
                  </void>
                 </void>
                 <void property="data">
-                 <string>Sprint 2</string>
+                 <string>Learn to use git</string>
                 </void>
                 <void property="name">
-                 <string>Assessment Process</string>
+                 <string>Learning Objective</string>
                 </void>
                 <void property="parent">
                  <object idref="Node1"/>
@@ -69,49 +84,6 @@
              <void property="data">
               <string>Our goal is to ensure that I get credit for this class.</string>
              </void>
-            </void>
-            <void method="add">
-             <object class="software_masters.planner_networking.Node" id="Node5">
-              <void property="children">
-               <void method="add">
-                <object class="software_masters.planner_networking.Node" id="Node6">
-                 <void property="children">
-                  <void method="add">
-                   <object class="software_masters.planner_networking.Node">
-                    <void property="data">
-                     <string>Git abilities</string>
-                    </void>
-                    <void property="name">
-                     <string>Results</string>
-                    </void>
-                    <void property="parent">
-                     <object idref="Node6"/>
-                    </void>
-                   </object>
-                  </void>
-                 </void>
-                 <void property="data">
-                  <string>Using git staging</string>
-                 </void>
-                 <void property="name">
-                  <string>Assessment Process</string>
-                 </void>
-                 <void property="parent">
-                  <object idref="Node5"/>
-                 </void>
-                </object>
-               </void>
-              </void>
-              <void property="data">
-               <string>Learn to use git</string>
-              </void>
-              <void property="name">
-               <string>Learning Objective</string>
-              </void>
-              <void property="parent">
-               <object idref="Node0"/>
-              </void>
-             </object>
             </void>
            </void>
            <void property="data">
@@ -131,13 +103,13 @@
         <void property="name">
          <null/>
         </void>
-        <void id="Node7" property="root">
+        <void id="Node6" property="root">
          <void id="ArrayList4" property="children">
-          <void id="Node8" index="0">
+          <void id="Node7" index="0">
            <void id="ArrayList5" property="children">
-            <void id="Node9" index="0">
+            <void id="Node8" index="0">
              <void id="ArrayList6" property="children">
-              <void id="Node10" index="0">
+              <void id="Node9" index="0">
                <void id="ArrayList7" property="children">
                 <void index="0">
                  <void property="data">
@@ -150,7 +122,7 @@
                </void>
               </void>
               <void method="add">
-               <object class="software_masters.planner_networking.Node" id="Node11">
+               <object class="software_masters.planner_networking.Node" id="Node10">
                 <void property="children">
                  <void method="add">
                   <object class="software_masters.planner_networking.Node">
@@ -161,7 +133,7 @@
                     <string>Results</string>
                    </void>
                    <void property="parent">
-                    <object idref="Node11"/>
+                    <object idref="Node10"/>
                    </void>
                   </object>
                  </void>
@@ -173,7 +145,7 @@
                  <string>Assessment Process</string>
                 </void>
                 <void property="parent">
-                 <object idref="Node9"/>
+                 <object idref="Node8"/>
                 </void>
                </object>
               </void>
@@ -202,13 +174,13 @@
         </void>
         <void property="plan">
          <object class="software_masters.planner_networking.Centre" id="Centre2">
-          <void id="Node12" property="root">
+          <void id="Node11" property="root">
            <void id="ArrayList8" property="children">
-            <void id="Node13" index="0">
+            <void id="Node12" index="0">
              <void id="ArrayList9" property="children">
-              <void id="Node14" index="0">
+              <void id="Node13" index="0">
                <void id="ArrayList10" property="children">
-                <void id="Node15" index="0">
+                <void id="Node14" index="0">
                  <void id="ArrayList11" property="children">
                   <void index="0">
                    <void property="data">
@@ -250,7 +222,7 @@
         </void>
         <void property="plan">
          <object class="software_masters.planner_networking.Centre" id="Centre3">
-          <void id="Node16" property="root">
+          <void id="Node15" property="root">
            <void id="ArrayList12" property="children">
             <void index="0">
              <void property="data">
@@ -277,13 +249,13 @@
         </void>
         <void property="plan">
          <object class="software_masters.planner_networking.Centre" id="Centre4">
-          <void id="Node17" property="root">
+          <void id="Node16" property="root">
            <void id="ArrayList13" property="children">
-            <void id="Node18" index="0">
+            <void id="Node17" index="0">
              <void id="ArrayList14" property="children">
-              <void id="Node19" index="0">
+              <void id="Node18" index="0">
                <void id="ArrayList15" property="children">
-                <void id="Node20" index="0">
+                <void id="Node19" index="0">
                  <void id="ArrayList16" property="children">
                   <void index="0">
                    <void property="data">
@@ -325,13 +297,13 @@
         </void>
         <void property="plan">
          <object class="software_masters.planner_networking.Centre" id="Centre5">
-          <void id="Node21" property="root">
+          <void id="Node20" property="root">
            <void id="ArrayList17" property="children">
-            <void id="Node22" index="0">
+            <void id="Node21" index="0">
              <void id="ArrayList18" property="children">
-              <void id="Node23" index="0">
+              <void id="Node22" index="0">
                <void id="ArrayList19" property="children">
-                <void id="Node24" index="0">
+                <void id="Node23" index="0">
                  <void id="ArrayList20" property="children">
                   <void index="0">
                    <void property="data">
@@ -349,7 +321,7 @@
                </void>
               </void>
               <void method="add">
-               <object class="software_masters.planner_networking.Node" id="Node25">
+               <object class="software_masters.planner_networking.Node" id="Node24">
                 <void property="children">
                  <void method="add">
                   <object class="software_masters.planner_networking.Node">
@@ -360,7 +332,7 @@
                     <string>Results</string>
                    </void>
                    <void property="parent">
-                    <object idref="Node25"/>
+                    <object idref="Node24"/>
                    </void>
                   </object>
                  </void>
@@ -372,7 +344,7 @@
                  <string>Assessment Process</string>
                 </void>
                 <void property="parent">
-                 <object idref="Node22"/>
+                 <object idref="Node21"/>
                 </void>
                </object>
               </void>
@@ -401,13 +373,13 @@
         </void>
         <void property="plan">
          <object class="software_masters.planner_networking.Centre" id="Centre6">
-          <void id="Node26" property="root">
+          <void id="Node25" property="root">
            <void id="ArrayList21" property="children">
-            <void id="Node27" index="0">
+            <void id="Node26" index="0">
              <void id="ArrayList22" property="children">
-              <void id="Node28" index="0">
+              <void id="Node27" index="0">
                <void id="ArrayList23" property="children">
-                <void id="Node29" index="0">
+                <void id="Node28" index="0">
                  <void id="ArrayList24" property="children">
                   <void index="0">
                    <void property="data">
@@ -420,7 +392,7 @@
                  </void>
                 </void>
                 <void method="add">
-                 <object class="software_masters.planner_networking.Node" id="Node30">
+                 <object class="software_masters.planner_networking.Node" id="Node29">
                   <void property="children">
                    <void method="add">
                     <object class="software_masters.planner_networking.Node">
@@ -431,7 +403,7 @@
                       <string>Results</string>
                      </void>
                      <void property="parent">
-                      <object idref="Node30"/>
+                      <object idref="Node29"/>
                      </void>
                     </object>
                    </void>
@@ -443,7 +415,7 @@
                    <string>Assessment Process</string>
                   </void>
                   <void property="parent">
-                   <object idref="Node28"/>
+                   <object idref="Node27"/>
                   </void>
                  </object>
                 </void>
